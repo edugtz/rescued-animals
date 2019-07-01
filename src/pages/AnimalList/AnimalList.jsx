@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import { getAnimals } from '../../services/api';
 import AnimalCards from '../../components/AnimalCards';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { getAnimalsData } from '../../actions/animalActions';
 import './AnimalList.scss';
 
 class AnimalList extends Component {
@@ -8,15 +10,14 @@ class AnimalList extends Component {
         super(props);
 
         this.state = {
-            animals: [],
             updatedAnimals: false
         };
     };
 
     componentDidMount() {
-        return getAnimals()
-            .then(response => {
-                this.setState({ animals: response.data, updatedAnimals: true })
+        this.props.getAnimalsData()
+            .then(() => {
+                this.setState({ updatedAnimals: true});
             })
             .catch(err => {
                 console.log(err.message);
@@ -24,7 +25,8 @@ class AnimalList extends Component {
     };
     
     render() {
-        const { updatedAnimals, animals } = this.state;
+        const { animals } = this.props;
+        const { updatedAnimals } = this.state;
         return(
             <div className="animals-container">
                 {(updatedAnimals && animals.length === 0) && 
@@ -43,4 +45,18 @@ class AnimalList extends Component {
     }
 }
 
-export default AnimalList;
+
+const mapDispatchToProps = (dispatch) => {
+    return bindActionCreators({ getAnimalsData }, dispatch);
+};
+
+const mapStateToProps = (state) => {
+    return {
+        animals: state.animals.animalList
+    };
+};
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(AnimalList);
