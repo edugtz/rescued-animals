@@ -1,8 +1,9 @@
 import React from 'react';
+import './RegistrationForm.scss';
 
 const RegistrationForm = props => {
     return(
-        <form onSubmit={props.onAnimalRegistration}>
+        <form className="animal-registration" onSubmit={props.onAnimalRegistration}>
             <div className="form-group row">
                 <label htmlFor="animal-name" className="col-sm-2 col-form-label animal-form-label">Name</label>
                 <div className="col-sm-10">

@@ -1,13 +1,13 @@
 .main-navbar-container {
-    width: 50%;
-    padding-left: 10%;
+    width: 40%;
 
     .main-navbar {
         margin: 0;
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-end;
 
         li {
+            padding-left: 10%;
             list-style: none;
             
             .navbar-link {

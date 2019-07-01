@@ -1,17 +1,32 @@
 .app-header {
+    flex-grow: 0;
     padding: 10px 0;
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: center;
     background-color: #ffffff;
     font-family: 'Courier New', Courier, monospace;
     
-    .app-icon {
-        font-size: 24px;
-        padding-right: 8px;
+    .app-brand {
+        width: 50%;
+        .app-icon {
+            font-size: 24px;
+            padding-right: 8px;
+        }
+        
+        .app-title {
+            font-size: 24px;
+        }
+
+        @media screen and (max-width: 760px) {
+            .app-icon {
+                font-size: 18px;
+            }
+            
+            .app-title {
+                font-size: 18px;
+            }
+        }
     }
-    
-    .app-title {
-        font-size: 24px;
-    }
+   
 }

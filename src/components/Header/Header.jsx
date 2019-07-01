@@ -10,6 +10,7 @@ const Header = () => {
         <div className="app-header-wrapper">
             <header className="container app-header">
                 <NavLink
+                    className="app-brand"
                     to="/"
                 >
                     <span className="app-icon"><FontAwesomeIcon icon={faDog} /></span>
