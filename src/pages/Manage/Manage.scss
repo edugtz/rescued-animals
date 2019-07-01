@@ -1,0 +1,31 @@
+.animals-table {
+    .animal-table-picture {
+        height: auto;
+        max-width: 40px;
+        object-fit: contain;
+        vertical-align: middle;
+    }
+
+    .animal-table-action-icons{
+        display: flex;
+        justify-content: space-around;
+
+        .animal-action-icon {
+            &:hover {
+                cursor: pointer;
+            } 
+
+            &.edit-action {
+                &:hover {
+                    color: #071eb3;
+                } 
+            }
+
+            &.delete-action {
+                &:hover {
+                    color: #DC143C;
+                } 
+            }
+        }
+    }
+}
