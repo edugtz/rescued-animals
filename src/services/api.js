@@ -18,3 +18,7 @@ export const getAnimal = (animalId) => {
 export const registerAnimal = (animalData) => {
     return api.post(routes.ANIMALS, animalData);
 };
+
+export const deleteAnimal = (animalId) => {
+    return api.delete(`${routes.ANIMALS}/${animalId}`);
+};

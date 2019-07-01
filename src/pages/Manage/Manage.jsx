@@ -4,12 +4,34 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { connect } from 'react-redux';
 import moment from 'moment';
 import './Manage.scss';
+import DeleteModal from '../../components/DeleteModal';
 
 class Manage extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            animal: null,
+            deleteModalOpen: false
+        };
+    };
+
+    toggleDeleteModal = (animal) => {
+        this.setState(prevState => ({
+            deleteModalOpen: !prevState.deleteModalOpen,
+            animal
+        }));
+    };
+
     render() {
         const { animals } = this.props;
         return(
             <div className="container manage-animals-container">
+                <DeleteModal 
+                    deleteModalOpen={this.state.deleteModalOpen}
+                    toggleDeleteModal={this.toggleDeleteModal}
+                    animal={this.state.animal ? this.state.animal : {}}   
+                />
                 <h1 className="main-title">Manage Animals</h1>
                 <table className="table table-hover animals-table">
                     <thead>
@@ -42,24 +64,22 @@ class Manage extends Component {
                                     <td>
                                         <span className="animal-table-action-icons">
                                             <FontAwesomeIcon className="animal-action-icon edit-action" icon={faEdit} />
-                                            <FontAwesomeIcon className="animal-action-icon delete-action" icon={faTrash} />
+                                            <FontAwesomeIcon 
+                                                className="animal-action-icon delete-action" 
+                                                icon={faTrash} 
+                                                onClick={() => this.toggleDeleteModal(animal)}
+                                            />
                                         </span>
                                     </td>
                                 </tr>
                             );
                         })}
                     </tbody>
-                    </table>
+                </table>
             </div>
         );
     }
 };
-
-// export default Manage;
-
-// const mapDispatchToProps = (dispatch) => {
-//     return bindActionCreators({ getAnimalsData }, dispatch);
-// };
 
 const mapStateToProps = (state) => {
     return {
@@ -69,6 +89,5 @@ const mapStateToProps = (state) => {
 
 export default connect(
     mapStateToProps,
-    // mapDispatchToProps
     null
 )(Manage);
