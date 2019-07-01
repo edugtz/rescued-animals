@@ -49,10 +49,10 @@ class Manage extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        {animals.length > 0 && animals.map(animal => {
+                        {animals.length > 0 && animals.map((animal, index) => {
                             return (
                                 <tr key={`${animal.name} - ${animal.id}`}>
-                                    <td>{animal.id}</td>
+                                    <td>{index+1}</td>
                                     <td><img className="animal-table-picture" src={animal.animalDetail.picture} alt=""/></td>
                                     <td>{animal.name}</td>
                                     <td>{animal.species}</td>

@@ -13,7 +13,7 @@ class DeleteModal extends Component {
                 swal({
                     title: response.data.message,
                     icon: "success",
-                    timer: 2000
+                    timer: 1500
                 })
                     .then(() => {
                         return this.props.getAnimalsData()
@@ -39,7 +39,7 @@ class DeleteModal extends Component {
                 <Modal isOpen={this.props.deleteModalOpen} toggle={this.props.toggleDeleteModal}>
                 <ModalHeader>Delete animal</ModalHeader>
                 <ModalBody>
-                    <b>Are you sure you want to delete it?</b>
+                    <p>Are you sure you want to delete it?</p>
                 </ModalBody>
                 <ModalFooter>
                     <Button color="danger" onClick={this.handleDeleteAnimal}>Continue</Button>
