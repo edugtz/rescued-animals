@@ -5,6 +5,8 @@ import Footer from './components/Footer';
 import AnimalList from './pages/AnimalList';
 import Animal from './pages/Animal';
 import Register from './pages/Register';
+import Manage from './pages/Manage';
+import NotFound from './pages/NotFound';
 
 const Routes = () => {
     return (
@@ -14,10 +16,9 @@ const Routes = () => {
                 <Switch>
                     <Route exact={true} path="/" component={AnimalList} />
                     <Route path="/register" component={Register} />
+                    <Route path="/manage" component={Manage} />
                     <Route path="/animal/:id" component={Animal} />
-                    {/* <Route exact path="/page-1" component={Testimonial} />
-                    <Route exact path="/page-2" component={Configurator} />
-                    <Route component={NotFound} /> */}
+                    <Route component={NotFound} />
                 </Switch>
             </div>
             <Footer />
