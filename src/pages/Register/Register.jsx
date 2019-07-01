@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import RegistrationForm from '../../components/RegistrationForm';
 import { Redirect } from 'react-router-dom';
 import { registerAnimal } from '../../services/api';
+import swal from 'sweetalert';
 import './Register.scss';
 
 class Register extends Component {
@@ -36,9 +37,14 @@ class Register extends Component {
 
         return registerAnimal(formData)
             .then(response => {
-                console.log(response);
-                // if(response.data.message === 'Animal successfully registered')
-                this.setState({ redirect: true })
+                swal({
+                    title: response.data.message,
+                    icon: "success",
+                    timer: 2000
+                })
+                    .then(() => {
+                        this.setState({ redirect: true })
+                    });
             })
             .catch(err => {
                 console.log(err);

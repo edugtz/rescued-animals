@@ -4,22 +4,33 @@ import { deleteAnimal } from '../../services/api';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { getAnimalsData } from '../../actions/animalActions';
+import swal from 'sweetalert';
 
 class DeleteModal extends Component {  
     handleDeleteAnimal = () => {
         return deleteAnimal(this.props.animal.id)
             .then(response => {
-                return this.props.getAnimalsData()
+                swal({
+                    title: response.data.message,
+                    icon: "success",
+                    timer: 2000
+                })
                     .then(() => {
-                        return this.props.toggleDeleteModal();
-                    })
+                        return this.props.getAnimalsData()
+                        .then(() => {
+                            return this.props.toggleDeleteModal();
+                        })
+                        .catch(err => {
+                            console.log(err);
+                        })
+                    })    
                     .catch(err => {
                         console.log(err);
                     })
             })
             .catch(err => {
                 console.log(err);
-            })
+            });
     };
     
     render() {
