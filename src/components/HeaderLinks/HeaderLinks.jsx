@@ -4,14 +4,22 @@ import './HeaderLinks.scss';
 
 const HeaderLinks = () => {
     return (
-        <nav className="main-navbar">
-            <ul>
+        <nav className="main-navbar-container">
+            <ul className="main-navbar">
                 <li>
                     <NavLink
                         className="navbar-link"
                         to="/register"
                     >
-                        Register animal 
+                        Register 
+                    </NavLink>
+                </li>
+                <li>
+                    <NavLink
+                        className="navbar-link"
+                        to="/manage"
+                    >
+                        Manage 
                     </NavLink>
                 </li>
             </ul>

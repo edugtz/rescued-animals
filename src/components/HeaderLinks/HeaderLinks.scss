@@ -1,21 +1,21 @@
-.main-navbar {
+.main-navbar-container {
+    width: 50%;
     padding-left: 10%;
 
-    ul {
+    .main-navbar {
         margin: 0;
+        display: flex;
+        justify-content: space-between;
 
         li {
             list-style: none;
             
             .navbar-link {
                 font-size: 16px;
-                // padding-bottom: 2px;
 
                 &:hover {
                     border-bottom: 2px solid #071eb3;
                     padding-bottom: 2px;
-                    // transition: 0.2s;
-                    // color: #fff;
                 }
             }
         }
