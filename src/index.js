@@ -1,13 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import AnimalList from './pages/AnimalList/AnimalList';
+import { BrowserRouter } from 'react-router-dom';
+import Routes from './routes';
 import * as serviceWorker from './serviceWorker';
 
 // Global styles
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './sass/style.scss';
 
-ReactDOM.render(<AnimalList />, 
+ReactDOM.render(
+    <BrowserRouter>
+        <Routes />
+    </BrowserRouter>, 
     document.getElementById('app')
 );
 

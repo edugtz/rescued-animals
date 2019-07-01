@@ -26,4 +26,25 @@ body {
     background-color: #ffffff;
     color: $primary-color;
     background-color: $background-color;
+
+    .main-app-wrapper {
+        height: 100%;
+        min-height: 100%;
+        background-color: #ffffff;
+      
+        .main-content-container {
+            background-color: #f9faff;
+            margin-right: auto;
+            margin-left: auto;
+            width: 100%;
+            height: auto;
+            min-height: calc(100% - 144px);
+
+            a {
+                color: $primary-color;
+                text-decoration: none;
+            }
+      
+        }
+    }     
 }

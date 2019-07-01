@@ -1,0 +1,28 @@
+.animal-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    p {
+        margin: 0;
+    }
+
+    .animal-complete-card {
+        width: 50%;
+        margin: 30px 0;
+
+        .card-species {
+            text-align: center;
+        }
+
+        .animal-information-first-section {
+            p {
+                display: inline;
+            }
+
+            margin-bottom: 10px;
+            padding-bottom: 3px;
+            border-bottom: 2px solid #071eb3;
+        }
+    }
+}

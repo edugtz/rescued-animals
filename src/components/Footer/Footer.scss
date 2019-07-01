@@ -1,0 +1,16 @@
+.app-footer-wrapper {
+    width: 100%;
+    background-color: #e6eaff;
+
+    .app-footer {
+        padding: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 15px;
+
+        p {
+            margin: 0;
+        }
+    }
+}
