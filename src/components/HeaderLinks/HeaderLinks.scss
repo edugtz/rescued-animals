@@ -1,0 +1,23 @@
+.main-navbar {
+    padding-left: 10%;
+
+    ul {
+        margin: 0;
+
+        li {
+            list-style: none;
+            
+            .navbar-link {
+                font-size: 16px;
+                // padding-bottom: 2px;
+
+                &:hover {
+                    border-bottom: 2px solid #071eb3;
+                    padding-bottom: 2px;
+                    // transition: 0.2s;
+                    // color: #fff;
+                }
+            }
+        }
+    }
+}

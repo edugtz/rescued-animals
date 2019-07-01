@@ -29,11 +29,10 @@ class Animal extends Component {
            <div className="animal-container">
                 {Object.keys(animal).length > 0 &&
                     <div className="card animal-complete-card">
-                        {/* <h1 className="main-title">{animal.name}</h1> */}
                         <img src={animal.animalDetail.picture} className="card-img-top" alt={animal.name} />
                         <div className="card-body">
-                            <h4 className="card-species">{animal.species}</h4>
-                            <h5 class="card-title">{animal.name}</h5>
+                            <h4 className="card-species">{animal.name}</h4>
+                            <h5 class="card-title">{animal.species}</h5>
                             <div className="animal-information-first-section">
                                 <p className="card-text">{animal.breed}</p> - <p className="card-text">{animal.animalDetail.location}</p>
                             </div>
