@@ -26,7 +26,7 @@ class Dashboard extends Component {
         return(
             <div className="dashboard-wrapper">
                 <div className="animals-container">
-                    <h1 className="main-title">Animalitos</h1>
+                    <h1 className="main-title">Animals Available For Adoption</h1>
                     {this.state.animals.length > 0 && <AnimalCards animals={this.state.animals} />}
                 </div>
             </div>

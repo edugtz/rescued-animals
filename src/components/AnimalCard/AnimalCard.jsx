@@ -6,9 +6,11 @@ const AnimalCard = (props) => {
 
     return(
         <div className="animal-card">
-            <h1 className="animal-name">{name}</h1>
             <div className="animal-picture">
                 <img src={animalDetail.picture} alt="animal" />
+            </div>
+            <div className="animal-name-wrapper">
+                <h2 className="animal-name">{name}</h2>
             </div>
         </div>
     );

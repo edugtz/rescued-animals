@@ -1,9 +1,10 @@
 .dashboard-wrapper {
-    background-color: lightblue;
+    // background-color: lightblue;
     min-height: calc(100vh - 60px);
 
     .main-title {
         margin: 0;
-        padding: 20px;
+        padding: 40px;
+        text-align: center;
     }
 }

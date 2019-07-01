@@ -1,0 +1,29 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+@import './variables';
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+body {
+    background-color: #ffffff;
+    font-family: $font-family;
+    font-size: $font-size;
+    font-weight: 500;
+    min-height: 100%;
+}
+
+
+#app {
+    height: 100%;
+    background-color: #ffffff;
+    color: $primary-color;
+    background-color: $background-color;
+}
