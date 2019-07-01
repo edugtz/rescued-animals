@@ -8,14 +8,15 @@ class AnimalList extends Component {
         super(props);
 
         this.state = {
-            animals: []
+            animals: [],
+            updatedAnimals: false
         };
     };
 
     componentDidMount() {
         return getAnimals()
             .then(response => {
-                this.setState({ animals: response.data })
+                this.setState({ animals: response.data, updatedAnimals: true })
             })
             .catch(err => {
                 console.log(err.message);
@@ -23,10 +24,20 @@ class AnimalList extends Component {
     };
     
     render() {
+        const { updatedAnimals, animals } = this.state;
         return(
             <div className="animals-container">
-                <h1 className="main-title">Animals Available For Adoption</h1>
-                {this.state.animals.length > 0 && <AnimalCards animals={this.state.animals} />}
+                {(updatedAnimals && animals.length === 0) && 
+                    <div>
+                        <h1 className="main-title">We are sorry, we currently dont have animals available for adoption</h1>
+                    </div>
+                }
+                {(updatedAnimals && animals.length > 0) && 
+                    <div>
+                        <h1 className="main-title">Animals Available For Adoption</h1>
+                        <AnimalCards animals={animals} />
+                    </div>
+                }
             </div>
         );
     }

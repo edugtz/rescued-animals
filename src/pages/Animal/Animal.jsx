@@ -32,7 +32,7 @@ class Animal extends Component {
                         <img src={animal.animalDetail.picture} className="card-img-top" alt={animal.name} />
                         <div className="card-body">
                             <h4 className="card-species">{animal.name}</h4>
-                            <h5 class="card-title">{animal.species}</h5>
+                            <h5 className="card-title">{animal.species}</h5>
                             <div className="animal-information-first-section">
                                 <p className="card-text">{animal.breed}</p> - <p className="card-text">{animal.animalDetail.location}</p>
                             </div>

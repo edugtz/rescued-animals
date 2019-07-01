@@ -14,3 +14,7 @@ export const getAnimals = () => {
 export const getAnimal = (animalId) => {
     return api.get(`${routes.ANIMALS}/${animalId}`);
 };
+
+export const registerAnimal = (animalData) => {
+    return api.post(routes.ANIMALS, animalData);
+};
