@@ -13,9 +13,6 @@ const Routes = () => {
         <div className="main-app-wrapper">
             <Header />
             <div className="main-content-container">
-                <div className="tracks-container">
-
-                </div>
                 <Switch>
                     <Route exact={true} path="/" component={AnimalList} />
                     <Route path="/register" component={Register} />

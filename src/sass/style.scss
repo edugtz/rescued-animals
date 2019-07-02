@@ -44,6 +44,13 @@ body {
             margin-left: auto;
             width: 100%;
             min-height: calc(100vh - 119px);
+
+            @media screen and (max-width: 760px) {
+                .main-title {
+                    font-size: 30px;
+                    padding-bottom: 10px;
+                }
+            }
         }
     }     
 }
