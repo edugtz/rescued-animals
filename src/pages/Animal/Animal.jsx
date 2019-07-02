@@ -34,12 +34,12 @@ class Animal extends Component {
                             <h4 className="card-species">{animal.name}</h4>
                             <h5 className="card-title">{animal.species}</h5>
                             <div className="animal-information-first-section">
-                                <p className="card-text">{animal.breed}</p> - <p className="card-text">{animal.animalDetail.location}</p>
+                                <p className="card-text animal-info">{animal.breed}</p> - <p className="card-text animal-info">{animal.animalDetail.location}</p>
                             </div>
                             <div className="animal-information-second-section">
-                                <p className="card-text"><b>Age: </b>{animal.age}</p>
-                                <p className="card-text"><b>Color: </b>{animal.color}</p>
-                                <p className="card-text"><b>Publication date: </b>
+                                <p className="card-text animal-info"><b>Age: </b>{animal.age}</p>
+                                <p className="card-text animal-info"><b>Color: </b>{animal.color}</p>
+                                <p className="card-text animal-info"><b>Publication date: </b>
                                     {moment(animal.animalDetail.publication_date).format('MMMM Do of YYYY')}
                                 </p>
                             </div>
