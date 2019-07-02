@@ -19,15 +19,27 @@ class Register extends Component {
     onAnimalRegistration = (e) => {
         e.preventDefault();
         const formValues = e.target;
+        const { name, species, breed, color, age, location } = formValues;
+
         const formData = new FormData();
 
+        if(!name.value || !species.value || !breed.value || !color.value || !age.value || !location.value ) {
+            swal({
+                title: "Please verify fields, some of them might be empty",
+                icon: "warning",
+                timer: 3000
+            });
+
+            return;
+        }
+
         const animalData = {
-            name: formValues.animalName.value,
-            species: formValues.animalSpecies.value,
-            breed: formValues.animalBreed.value,
-            color: formValues.animalColor.value,
-            age: formValues.animalAge.value,
-            location: formValues.animalLocation.value,
+            name: formValues.name.value,
+            species: formValues.species.value,
+            breed: formValues.breed.value,
+            color: formValues.color.value,
+            age: formValues.age.value,
+            location: formValues.location.value,
             image: this.state.selectedFile
         };
 
