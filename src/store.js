@@ -4,8 +4,6 @@ import animalsReducer from './reducers/animalsReducer';
 import { loadState, saveState } from './persistState';
 
 // Only enable redux dev tools if environment is not production
-console.log(process.env.REACT_APP_NODE_ENV);
-console.log(process.env.REACT_APP_NODE_ENV !== 'production' && window);
 const composeEnhancers = process.env.REACT_APP_NODE_ENV !== 'production' && window ? 
     window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ : compose;
 
