@@ -1,3 +1,4 @@
+/* Methods to load and save the state to the localStorage */
 export const loadState = () => {
     try {
         const serializedState = localStorage.getItem('state');
