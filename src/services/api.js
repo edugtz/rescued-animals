@@ -22,3 +22,7 @@ export const registerAnimal = (animalData) => {
 export const deleteAnimal = (animalId) => {
     return api.delete(`${routes.ANIMALS}/${animalId}`);
 };
+
+export const updateAnimal = (animalId, updatedAnimalData) => {
+    return api.put(`${routes.ANIMALS}/${animalId}`, updatedAnimalData);
+};

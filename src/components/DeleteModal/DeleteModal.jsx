@@ -18,11 +18,11 @@ class DeleteModal extends Component {
                     .then(() => {
                         return this.props.getAnimalsData()
                         .then(() => {
-                            return this.props.toggleDeleteModal();
+                            return this.props.toggleDeleteModal(this.props.animal);
                         })
                         .catch(err => {
                             console.log(err);
-                        })
+                        });
                     })    
                     .catch(err => {
                         console.log(err);
@@ -36,14 +36,14 @@ class DeleteModal extends Component {
     render() {
         return (
             <div>
-                <Modal isOpen={this.props.deleteModalOpen} toggle={this.props.toggleDeleteModal}>
+                <Modal isOpen={this.props.deleteModalOpen} toggle={() => this.props.toggleDeleteModal(this.props.animal)}>
                 <ModalHeader>Delete animal</ModalHeader>
                 <ModalBody>
                     <p>Are you sure you want to delete it?</p>
                 </ModalBody>
                 <ModalFooter>
                     <Button color="danger" onClick={this.handleDeleteAnimal}>Continue</Button>
-                    <Button color="secondary" onClick={this.props.toggleDeleteModal}>Cancel</Button>
+                    <Button color="secondary" onClick={() => this.props.toggleDeleteModal(this.props.animal)}>Cancel</Button>
                 </ModalFooter>
                 </Modal>
             </div>

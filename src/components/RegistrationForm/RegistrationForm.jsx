@@ -47,7 +47,7 @@ const RegistrationForm = props => {
                 </div>
             </div>
             <div className="form-group row">
-                <label htmlFor="animal-location" className="col-sm-2 col-form-label animal-form-label">Share a pic</label>
+                <label htmlFor="animal-location" className="col-sm-2 col-form-label animal-form-label">Picture</label>
                 <div className="col-sm-10 custom-file">
                     <input onChange={props.handleFileUpload} type="file" name="animalPicture" className="custom-file-input" />
                     <label className="custom-file-label custom-size">Choose file...</label>

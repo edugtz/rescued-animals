@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import moment from 'moment';
 import './Manage.scss';
 import DeleteModal from '../../components/DeleteModal';
+import EditModal from '../../components/EditModal';
 
 class Manage extends Component {
     constructor(props) {
@@ -12,7 +13,8 @@ class Manage extends Component {
 
         this.state = {
             animal: null,
-            deleteModalOpen: false
+            deleteModalOpen: false,
+            editModalOpen: false
         };
     };
 
@@ -23,15 +25,31 @@ class Manage extends Component {
         }));
     };
 
+    toggleEditModal = (animal) => {
+        this.setState(prevState => ({
+            editModalOpen: !prevState.editModalOpen,
+            animal
+        }));
+    };
+
     render() {
         const { animals } = this.props;
         return(
             <div className="container manage-animals-container">
-                <DeleteModal 
-                    deleteModalOpen={this.state.deleteModalOpen}
-                    toggleDeleteModal={this.toggleDeleteModal}
-                    animal={this.state.animal ? this.state.animal : {}}   
-                />
+                {this.state.animal && Object.keys(this.state.animal).length > 0 &&
+                    <DeleteModal 
+                        deleteModalOpen={this.state.deleteModalOpen}
+                        toggleDeleteModal={this.toggleDeleteModal}
+                        animal={this.state.animal}   
+                    />
+                }
+                {this.state.animal && Object.keys(this.state.animal).length > 0 &&
+                    <EditModal 
+                        editModalOpen={this.state.editModalOpen}
+                        toggleEditModal={this.toggleEditModal}
+                        animal={(this.state.animal && Object.keys(this.state.animal).length > 0 ) ? this.state.animal : {}}
+                    />
+                }
                 <h1 className="main-title">Manage Animals</h1>
                 <table className="table table-hover animals-table">
                     <thead>
@@ -63,7 +81,11 @@ class Manage extends Component {
                                     <td>{moment(animal.animalDetail.publication_date).format('DD/MMM/YYYY')}</td>
                                     <td>
                                         <span className="animal-table-action-icons">
-                                            <FontAwesomeIcon className="animal-action-icon edit-action" icon={faEdit} />
+                                            <FontAwesomeIcon 
+                                                className="animal-action-icon edit-action" 
+                                                icon={faEdit} 
+                                                onClick={() => this.toggleEditModal(animal)}     
+                                            />
                                             <FontAwesomeIcon 
                                                 className="animal-action-icon delete-action" 
                                                 icon={faTrash} 
